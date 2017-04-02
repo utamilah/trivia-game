@@ -1,0 +1,31 @@
+body {
+  background: #FC6769;
+  color: #fff;
+  font-family: 'Signika', sans-serif;
+}
+
+#quizBox {
+  margin: 100px auto;
+  text-align: center;
+}
+  #quizBox h1 {
+
+  }
+  #quizBox a {
+    display: block;
+    margin: 50px auto;
+    padding: 25px;
+    width: 40%;
+    border-radius: 15px;
+    font-size: 1.5em;
+    font-weight: bold;
+    background: #eee;
+    color: #FC6769;
+    text-decoration: none;
+    box-shadow: 0px 5px 0px 0px #BF4C58;
+  }
+  #quizBox a:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+  }
