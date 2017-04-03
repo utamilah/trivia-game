@@ -33,15 +33,19 @@ $('#playBtn').on('click', function(){
   // Toggle away intro text
   $('#intro').toggle();
   // Toggle in the quiz questions
-  $('#quizBox').toggle(function(){
+  $('#quizBox').fadeIn(500,'swing',function(){
     // Add question and answer text to the page
     $('.question').text(allQuestions);
-    for (var i = 0; i < musicQues.length; i++) {
+    musicQues.forEach(function(question,i){
       $('.questionNum').eq(i).text(`Question ${i + 1}`)
       $('.answerBtn').eq(i).text(answers.ans1[i]);
-    };
+      console.log(i);
+    });
   });
 });
+
+// Question Functions
+
 
   // Create a click event that reveals the correct answer after an answer is clicked
   // Highlight correct answer with green
