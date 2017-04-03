@@ -1,3 +1,14 @@
+// Creat Object that holds all questions and answers
+// var musicQuestions = {
+//   var question1 = {
+//     question: 'Pharetra Tristique Ridiculus Mattis Ullamcorper',
+//     choices: ['A','B','C'],
+//     correct: musicQuestions.choices[1]
+//   }
+// }
+//
+// var correct1 = musicQuestions.choices[1];
+
 // Create objects that hold questions
   var musicQues = [
     'Pharetra Tristique Ridiculus Mattis Ullamcorper',
@@ -28,6 +39,68 @@
 
 var allQuestions = musicQues[Math.floor(Math.random() * musicQues.length)];
 
+switch (allQuestions) {
+  case musicQues[0]:
+  musicQues.forEach(function(question, i) {
+    $('.questionNum').eq(i).text(`Question ${i + 1}`);
+    $('.answerBtn').eq(i).text(answers.ans1[i]);
+  });
+  var correct = answers.ans1[1];
+    break;
+  case musicQues[1]:
+  musicQues.forEach(function(question, i) {
+    $('.questionNum').eq(i).text(`Question ${i + 1}`);
+    $('.answerBtn').eq(i).text(answers.ans2[i]);
+  });
+    break;
+  case musicQues[2]:
+  musicQues.forEach(function(question, i) {
+    $('.questionNum').eq(i).text(`Question ${i + 1}`);
+    $('.answerBtn').eq(i).text(answers.ans3[i]);
+  });
+  case musicQues[3]:
+  musicQues.forEach(function(question, i) {
+    $('.questionNum').eq(i).text(`Question ${i + 1}`);
+    $('.answerBtn').eq(i).text(answers.ans4[i]);
+  });
+  case musicQues[4]:
+  musicQues.forEach(function(question, i) {
+    $('.questionNum').eq(i).text(`Question ${i + 1}`);
+    $('.answerBtn').eq(i).text(answers.ans5[i]);
+  });
+  var correct = answers.ans1[1];
+    break;
+  case musicQues[5]:
+  musicQues.forEach(function(question, i) {
+    $('.questionNum').eq(i).text(`Question ${i + 1}`);
+    $('.answerBtn').eq(i).text(answers.ans6[i]);
+  });
+    break;
+  case musicQues[6]:
+  musicQues.forEach(function(question, i) {
+    $('.questionNum').eq(i).text(`Question ${i + 1}`);
+    $('.answerBtn').eq(i).text(answers.ans7[i]);
+  });
+  case musicQues[7]:
+  musicQues.forEach(function(question, i) {
+    $('.questionNum').eq(i).text(`Question ${i + 1}`);
+    $('.answerBtn').eq(i).text(answers.ans8[i]);
+  });
+  case musicQues[8]:
+  musicQues.forEach(function(question, i) {
+    $('.questionNum').eq(i).text(`Question ${i + 1}`);
+    $('.answerBtn').eq(i).text(answers.ans9[i]);
+  });
+  case musicQues[9]:
+  musicQues.forEach(function(question, i) {
+    $('.questionNum').eq(i).text(`Question ${i + 1}`);
+    $('.answerBtn').eq(i).text(answers.ans10[i]);
+  });
+
+  default:
+
+}
+
 // Create click even that starts game at first question
 $('#playBtn').on('click', function(){
   // Toggle away intro text
@@ -36,11 +109,6 @@ $('#playBtn').on('click', function(){
   $('#quizBox').fadeIn(500,'swing',function(){
     // Add question and answer text to the page
     $('.question').text(allQuestions);
-    musicQues.forEach(function(question,i){
-      $('.questionNum').eq(i).text(`Question ${i + 1}`)
-      $('.answerBtn').eq(i).text(answers.ans1[i]);
-      console.log(i);
-    });
   });
 });
 
