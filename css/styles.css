@@ -1,31 +1,89 @@
 body {
-  background: #FC6769;
+  background-image: linear-gradient(to right, #E05A5A 0%, #C04072 100%);
+  background-size: cover;
   color: #fff;
-  font-family: 'Signika', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
-#quizBox {
+a {
+  cursor: pointer;
+}
+
+#intro, #quizBox, #nextBtn {
   margin: 100px auto;
+  width: 70%;
   text-align: center;
 }
-  #quizBox h1 {
+#intro {
 
-  }
-  #quizBox a {
+}
+#quizBox {
+  display: none;
+}
+  #intro a, #quizBox a {
     display: block;
     margin: 50px auto;
     padding: 25px;
     width: 40%;
-    border-radius: 15px;
+    border-radius: 10px;
     font-size: 1.5em;
     font-weight: bold;
-    background: #eee;
+    background: #fff;
     color: #FC6769;
     text-decoration: none;
-    box-shadow: 0px 5px 0px 0px #BF4C58;
+    box-shadow: 0 5px 0 0 #8E2D37;
   }
-  #quizBox a:active {
+
+    #intro h1 {
+      font-size: 3em;
+    }
+    #intro p {
+      font-size: 1.25em;
+    }
+
+#nextBtn {
+  display: none;
+}
+
+#nextBtn a {
+  background: rgba(	255, 109, 109, .4);
+  border-radius: 10px;
+  padding: 12px 50px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+}
+  #nextBtn a:hover {
+    background: rgba(	255, 109, 109, 1);
+    -webkit-transition: background-color 2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease;
+  }
+  .correct {
+    background: #F44040;
+    color: #fff;
+  }
+  .incorrect {
+    background: #4F9647;
+    color: #fff;
+  }
+  #intro a:active, #quizBox a:active {
     transform: translate(0px, 5px);
     -webkit-transform: translate(0px, 5px);
-    box-shadow: 0px 1px 0px 0px;
+    box-shadow: 0 0 0 0;
   }
+
+.questionNum {
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.question {
+  font-size: 30px;
+  font-weight: 300;
+  color: #FFFFFF;
+}
