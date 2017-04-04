@@ -5,33 +5,47 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-a {
-  cursor: pointer;
-}
-
-#intro, #quizBox, #nextBtn {
-  margin: 100px auto;
+main {
   width: 70%;
-  text-align: center;
+  margin: auto;
 }
-#intro {
 
+#topInfo {
+  margin: 0 auto;
+  text-align: center;
+  display: none;
+  justify-content: space-around;
+}
+  #topInfo h6 {
+    text-transform: uppercase;
+  }
+
+#intro {
+  margin: 100px auto;
+  text-align: center;
 }
 #quizBox {
   display: none;
+  margin: 50px auto;
+  text-align: center;
 }
-  #intro a, #quizBox a {
+#nextBtn {
+  display: none;
+  margin: 20px auto;
+  text-align: center;
+}
+  #intro button, #quizBox button {
     display: block;
-    margin: 50px auto;
+    margin: 30px auto;
     padding: 25px;
     width: 40%;
+    border: none;
     border-radius: 10px;
     font-size: 1.5em;
     font-weight: 300;
     text-decoration: none;
     box-shadow: 0 5px 0 0 #8E2D37;
   }
-
     #intro h1 {
       font-size: 3em;
     }
@@ -39,19 +53,16 @@ a {
       font-size: 1.25em;
     }
 
-#nextBtn {
-  display: none;
-}
-
-#nextBtn a {
+#nextBtn button {
   background: rgba(	255, 109, 109, .4);
   border-radius: 10px;
+  border: none;
   padding: 12px 50px;
   color: #fff;
   text-decoration: none;
   font-size: 24px;
 }
-  #nextBtn a:hover {
+  #nextBtn button:hover {
     background: rgba(	255, 109, 109, 1);
     -webkit-transition: background-color 2s ease-out;
     -moz-transition: background-color 2s ease-out;
@@ -63,14 +74,14 @@ a {
     color: #FC6769;
   }
   .correct {
-    background: #F44040;
-    color: #fff;
-  }
-  .incorrect {
     background: #4F9647;
     color: #fff;
   }
-  #intro a:active, #quizBox a:active {
+  .incorrect {
+    background: #F44040;
+    color: #fff;
+  }
+  #intro button:active, #quizBox button:active {
     transform: translate(0px, 5px);
     -webkit-transform: translate(0px, 5px);
     box-shadow: 0 0 0 0;
@@ -93,4 +104,8 @@ a {
   font-size: 30px;
   font-weight: 300;
   color: #FFFFFF;
+}
+
+footer {
+  display: none;
 }
