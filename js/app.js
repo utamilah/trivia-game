@@ -32,17 +32,27 @@ var allQuestions = musicQues[0];
 
 var answerBtn = $('.answerBtn');
 var questionNum = $('.questionNum');
+var nextBtn = $('#nextBtn');
 var guess = function(){
   var txt = $(this).text();
   if (txt === correct) {
     $(this).addClass('correct');
   } else {
     $(this).addClass('incorrect');
+    for (var i = 0; answerBtn.length > i; i++){
+      var button = answerBtn.eq(i);
+      if (button.text() === correct) {
+        button.addClass('correct');
+      }
+    }
   }
-
-  console.log(txt);
+  // Toggle display of next button if answer is clicked
+  $('#nextBtn').toggle();
 }
-$('.answerBtn').on('click', guess);
+// Activate function when any answer is clicked
+answerBtn.on('click', guess);
+
+
 
 // Switch Case that pairs all questions to answers
 switch (allQuestions) {
