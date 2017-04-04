@@ -1,14 +1,3 @@
-// Creat Object that holds all questions and answers
-// var musicQuestions = {
-//   var question1 = {
-//     question: 'Pharetra Tristique Ridiculus Mattis Ullamcorper',
-//     choices: ['A','B','C'],
-//     correct: musicQuestions.choices[1]
-//   }
-// }
-
-// var correct1 = musicQuestions.choices[1];
-
 // Create objects that hold questions
   var musicQues = [
     'Pharetra Tristique Ridiculus Mattis Ullamcorper',
@@ -37,118 +26,124 @@
      ans10: ['A','B','C']
   };
 
-// Various Variables
-var allQuestions = musicQues[Math.floor(Math.random() * musicQues.length)];
-var giveAnswer = function(){
+// Randomize question order
+var allQuestions = musicQues[0];
+// var allQuestions = musicQues[Math.floor(Math.random() * musicQues.length)];
 
+var answerBtn = $('.answerBtn');
+var questionNum = $('.questionNum');
+var guess = function(){
+  var txt = $(this).text();
+  if (txt === correct) {
+    $(this).addClass('correct');
+  } else {
+    $(this).addClass('incorrect');
+  }
+
+  console.log(txt);
 }
-
-$('.answerBtn').on('click', giveAnswer);
+$('.answerBtn').on('click', guess);
 
 // Switch Case that pairs all questions to answers
 switch (allQuestions) {
   case musicQues[0]:
   musicQues.forEach(function(question, i) {
-    $('.questionNum').eq(i).text(`Question ${i + 1}`);
-    $('.answerBtn').eq(i).text(answers.ans1[i]);
+    questionNum.eq(i).text(`Question ${i + 1}`);
+    answerBtn.eq(i).text(answers.ans1[i]);
   });
-    break;
+  var correct = answers.ans1[1];
+  break;
   case musicQues[1]:
   musicQues.forEach(function(question, i) {
-    $('.questionNum').eq(i).text(`Question ${i + 1}`);
-    $('.answerBtn').eq(i).text(answers.ans2[i]);
+    questionNum.eq(i).text(`Question ${i + 1}`);
+    answerBtn.eq(i).text(answers.ans2[i]);
   });
   var correct = answers.ans1[2];
   break;
 
   case musicQues[2]:
   musicQues.forEach(function(question, i) {
-    $('.questionNum').eq(i).text(`Question ${i + 1}`);
-    $('.answerBtn').eq(i).text(answers.ans3[i]);
+    questionNum.eq(i).text(`Question ${i + 1}`);
+    answerBtn.eq(i).text(answers.ans3[i]);
   });
-  var correct = answers.ans1[3];
+  var correct = answers.ans1[0];
   break;
 
   case musicQues[3]:
   musicQues.forEach(function(question, i) {
-    $('.questionNum').eq(i).text(`Question ${i + 1}`);
-    $('.answerBtn').eq(i).text(answers.ans4[i]);
+    questionNum.eq(i).text(`Question ${i + 1}`);
+    answerBtn.eq(i).text(answers.ans4[i]);
   });
+  var correct = answers.ans1[1];
   break;
 
   case musicQues[4]:
   musicQues.forEach(function(question, i) {
-    $('.questionNum').eq(i).text(`Question ${i + 1}`);
-    $('.answerBtn').eq(i).text(answers.ans5[i]);
+    questionNum.eq(i).text(`Question ${i + 1}`);
+    answerBtn.eq(i).text(answers.ans5[i]);
   });
   var correct = answers.ans1[1];
   break;
 
   case musicQues[5]:
   musicQues.forEach(function(question, i) {
-    $('.questionNum').eq(i).text(`Question ${i + 1}`);
-    $('.answerBtn').eq(i).text(answers.ans6[i]);
+    questionNum.eq(i).text(`Question ${i + 1}`);
+    answerBtn.eq(i).text(answers.ans6[i]);
   });
+  var correct = answers.ans1[2];
   break;
 
   case musicQues[6]:
   musicQues.forEach(function(question, i) {
-    $('.questionNum').eq(i).text(`Question ${i + 1}`);
-    $('.answerBtn').eq(i).text(answers.ans7[i]);
+    questionNum.eq(i).text(`Question ${i + 1}`);
+    answerBtn.eq(i).text(answers.ans7[i]);
   });
+  var correct = answers.ans1[0];
   break;
 
   case musicQues[7]:
   musicQues.forEach(function(question, i) {
-    $('.questionNum').eq(i).text(`Question ${i + 1}`);
-    $('.answerBtn').eq(i).text(answers.ans8[i]);
+    questionNum.eq(i).text(`Question ${i + 1}`);
+    answerBtn.eq(i).text(answers.ans8[i]);
   });
+  var correct = answers.ans1[0];
   break;
 
   case musicQues[8]:
   musicQues.forEach(function(question, i) {
-    $('.questionNum').eq(i).text(`Question ${i + 1}`);
-    $('.answerBtn').eq(i).text(answers.ans9[i]);
+    questionNum.eq(i).text(`Question ${i + 1}`);
+    answerBtn.eq(i).text(answers.ans9[i]);
   });
+  var correct = answers.ans1[1];
   break;
 
   case musicQues[9]:
   musicQues.forEach(function(question, i) {
-    $('.questionNum').eq(i).text(`Question ${i + 1}`);
-    $('.answerBtn').eq(i).text(answers.ans10[i]);
+    questionNum.eq(i).text(`Question ${i + 1}`);
+    answerBtn.eq(i).text(answers.ans10[i]);
   });
-
+  var correct = answers.ans1[1];
+  break;
   default:
 
 }
 
-// Create click even that starts game at first question
+// Determine if answer is correct/incorrect
+var giveAnswer = function(){
+  // Need to somehow access button value
+};
+
+$('.answerBtn').on('click', giveAnswer);
+
+
+// Create click even that starts game at first question, score, and timer
 $('#playBtn').on('click', function(){
   // Toggle away intro text
   $('#intro').toggle();
   // Toggle in the quiz questions
+  $('#topInfo').attr('style','display: flex');
   $('#quizBox').fadeIn(500,'swing',function(){
     // Add question and answer text to the page
     $('.question').text(allQuestions);
   });
 });
-
-// Question Functions
-
-
-  // Create a click event that reveals the correct answer after an answer is clicked
-  // Highlight correct answer with green
-  // Highlight incorrect answer with red if applicable
-  // Append 'next' button after questions are answered, create click event that adds next question to the screen
-
-  // $('body').append("<a id='playBtn' href='#'>Let's Play!</button>");
-  //
-  // console.log('working');
-  // function addAnsrs(){
-  //   $('#quizBox').append('<h1>Question</h1>')
-  //   for(var i=0; i < 3; i++) {
-  //     $('#quizBox').append('<a href="#" class="answerBtn">Ans 1</a>')
-  //   }
-  // }
-
-  // $('#playBtn').on('click', addAnsrs);
