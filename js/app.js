@@ -6,7 +6,7 @@
 //     correct: musicQuestions.choices[1]
 //   }
 // }
-//
+
 // var correct1 = musicQuestions.choices[1];
 
 // Create objects that hold questions
@@ -37,60 +37,81 @@
      ans10: ['A','B','C']
   };
 
+// Various Variables
 var allQuestions = musicQues[Math.floor(Math.random() * musicQues.length)];
+var giveAnswer = function(){
 
+}
+
+$('.answerBtn').on('click', giveAnswer);
+
+// Switch Case that pairs all questions to answers
 switch (allQuestions) {
   case musicQues[0]:
   musicQues.forEach(function(question, i) {
     $('.questionNum').eq(i).text(`Question ${i + 1}`);
     $('.answerBtn').eq(i).text(answers.ans1[i]);
   });
-  var correct = answers.ans1[1];
     break;
   case musicQues[1]:
   musicQues.forEach(function(question, i) {
     $('.questionNum').eq(i).text(`Question ${i + 1}`);
     $('.answerBtn').eq(i).text(answers.ans2[i]);
   });
-    break;
+  var correct = answers.ans1[2];
+  break;
+
   case musicQues[2]:
   musicQues.forEach(function(question, i) {
     $('.questionNum').eq(i).text(`Question ${i + 1}`);
     $('.answerBtn').eq(i).text(answers.ans3[i]);
   });
+  var correct = answers.ans1[3];
+  break;
+
   case musicQues[3]:
   musicQues.forEach(function(question, i) {
     $('.questionNum').eq(i).text(`Question ${i + 1}`);
     $('.answerBtn').eq(i).text(answers.ans4[i]);
   });
+  break;
+
   case musicQues[4]:
   musicQues.forEach(function(question, i) {
     $('.questionNum').eq(i).text(`Question ${i + 1}`);
     $('.answerBtn').eq(i).text(answers.ans5[i]);
   });
   var correct = answers.ans1[1];
-    break;
+  break;
+
   case musicQues[5]:
   musicQues.forEach(function(question, i) {
     $('.questionNum').eq(i).text(`Question ${i + 1}`);
     $('.answerBtn').eq(i).text(answers.ans6[i]);
   });
-    break;
+  break;
+
   case musicQues[6]:
   musicQues.forEach(function(question, i) {
     $('.questionNum').eq(i).text(`Question ${i + 1}`);
     $('.answerBtn').eq(i).text(answers.ans7[i]);
   });
+  break;
+
   case musicQues[7]:
   musicQues.forEach(function(question, i) {
     $('.questionNum').eq(i).text(`Question ${i + 1}`);
     $('.answerBtn').eq(i).text(answers.ans8[i]);
   });
+  break;
+
   case musicQues[8]:
   musicQues.forEach(function(question, i) {
     $('.questionNum').eq(i).text(`Question ${i + 1}`);
     $('.answerBtn').eq(i).text(answers.ans9[i]);
   });
+  break;
+
   case musicQues[9]:
   musicQues.forEach(function(question, i) {
     $('.questionNum').eq(i).text(`Question ${i + 1}`);

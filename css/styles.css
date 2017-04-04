@@ -27,9 +27,7 @@ a {
     width: 40%;
     border-radius: 10px;
     font-size: 1.5em;
-    font-weight: bold;
-    background: #fff;
-    color: #FC6769;
+    font-weight: 300;
     text-decoration: none;
     box-shadow: 0 5px 0 0 #8E2D37;
   }
@@ -60,6 +58,10 @@ a {
     -o-transition: background-color 2s ease-out;
     transition: background-color 2s ease;
   }
+  .default {
+    background: #fff;
+    color: #FC6769;
+  }
   .correct {
     background: #F44040;
     color: #fff;
@@ -69,6 +71,12 @@ a {
     color: #fff;
   }
   #intro a:active, #quizBox a:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0 0 0 0;
+  }
+
+  .active {
     transform: translate(0px, 5px);
     -webkit-transform: translate(0px, 5px);
     box-shadow: 0 0 0 0;
