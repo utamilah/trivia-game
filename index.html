@@ -12,26 +12,43 @@
   <title>Document</title>
 </head>
 <body>
-  <section id="intro">
-    <h1>Musical Trivia</h1>
-    <p>Test your musical knowledge!</p>
-    <a href="#" id="playBtn" class="default">Let's Play</a>
-  </section>
+  <main>
+    <header id="topInfo">
+      <div class="timer">
+        <h6>Timer</h6>
+        <p>#</p>
+      </div>
+      <div class="score">
+        <h6>Score</h6>
+        <p>#</p>
+      </div>
+    </header>
+    <section id="intro">
+      <h1>Musical Trivia</h1>
+      <p>Test your musical knowledge!</p>
+      <button id="playBtn" class="default">Let's Play</button>
+    </section>
 
-  <section id="quizBox">
-    <p class="questionNum"></p>
-    <h1 class="question"></h1>
-      <a href="#" class="answerBtn default"></a>
-      <a href="#" class="answerBtn default"></a>
-      <a href="#" class="answerBtn default"></a>
-  </section>
+    <section id="quizBox">
+      <p class="questionNum"></p>
+      <h1 class="question"></h1>
+        <button  class="answerBtn default"></button>
+        <button  class="answerBtn default"></button>
+        <button  class="answerBtn default"></button>
+    </section>
 
-  <!-- Next Button -->
-  <section id="nextBtn">
-    <a href="#">Next</a>
-  </section>
+    <!-- Next Button -->
+    <div id="nextBtn">
+      <button>Next</button>
+    </div>
+  </main>
+  <footer>
+    <p>Made with love and a side of struggle by halimatu</p>
+  </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="js/app.js" type="text/javascript"></script>
+  <script src="js/question.js" type="text/javascript"></script>
+  <script src="js/function.js" type="text/javascript"></script>
 </body>
 </html>
