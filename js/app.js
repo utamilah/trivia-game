@@ -36,7 +36,6 @@ var answerBtn = $('.answerBtn');
 var questionNum = $('.questionNum');
 var nextBtn = $('#nextBtn');
 
-
 // Create click even that starts game at first question, score, and timer
 $('#playBtn').on('click', function(){
   // Toggle away intro text
@@ -73,9 +72,7 @@ answerBtn.on('click', guess);
 // Create a function and click event that will move on to next question
 var nextQuestion = function(){
   answerBtn.removeClass('correct incorrect');
-  musicQues.pop(current);
-  console.log(current);
-  console.log(correct);
+  musicQues.pop(allQuestions);
   for (var i = 0; musicQues.length > i; i++){
     $('.question').text(musicQues[i]);
   }
@@ -105,7 +102,7 @@ switch (allQuestions) {
     questionNum.eq(i).text(`Question ${i + 1}`);
     answerBtn.eq(i).text(answers.ans2[i]);
   });
-  var correct = answers.ans1[2];
+  var correct = answers.ans2[2];
   var current = musicQues[1];
   break;
 
@@ -114,7 +111,7 @@ switch (allQuestions) {
     questionNum.eq(i).text(`Question ${i + 1}`);
     answerBtn.eq(i).text(answers.ans3[i]);
   });
-  var correct = answers.ans1[0];
+  var correct = answers.ans3[0];
   var current = musicQues[2];
   break;
 
@@ -123,7 +120,7 @@ switch (allQuestions) {
     questionNum.eq(i).text(`Question ${i + 1}`);
     answerBtn.eq(i).text(answers.ans4[i]);
   });
-  var correct = answers.ans1[1];
+  var correct = answers.ans4[1];
   var current = musicQues[3];
   break;
 
@@ -132,7 +129,7 @@ switch (allQuestions) {
     questionNum.eq(i).text(`Question ${i + 1}`);
     answerBtn.eq(i).text(answers.ans5[i]);
   });
-  var correct = answers.ans1[1];
+  var correct = answers.ans5[1];
   var current = musicQues[4];
   break;
 
@@ -141,7 +138,7 @@ switch (allQuestions) {
     questionNum.eq(i).text(`Question ${i + 1}`);
     answerBtn.eq(i).text(answers.ans6[i]);
   });
-  var correct = answers.ans1[2];
+  var correct = answers.ans6[2];
   var current = musicQues[5];
   break;
 
@@ -150,7 +147,7 @@ switch (allQuestions) {
     questionNum.eq(i).text(`Question ${i + 1}`);
     answerBtn.eq(i).text(answers.ans7[i]);
   });
-  var correct = answers.ans1[0];
+  var correct = answers.ans7[0];
   var current = musicQues[6];
   break;
 
@@ -159,7 +156,7 @@ switch (allQuestions) {
     questionNum.eq(i).text(`Question ${i + 1}`);
     answerBtn.eq(i).text(answers.ans8[i]);
   });
-  var correct = answers.ans1[0];
+  var correct = answers.ans8[0];
   var current = musicQues[7];
   break;
 
@@ -168,7 +165,7 @@ switch (allQuestions) {
     questionNum.eq(i).text(`Question ${i + 1}`);
     answerBtn.eq(i).text(answers.ans9[i]);
   });
-  var correct = answers.ans1[1];
+  var correct = answers.ans9[1];
   var current = musicQues[8];
   break;
 
@@ -177,7 +174,7 @@ switch (allQuestions) {
     questionNum.eq(i).text(`Question ${i + 1}`);
     answerBtn.eq(i).text(answers.ans10[i]);
   });
-  var correct = answers.ans1[1];
+  var correct = answers.ans10[1];
   var current = musicQues[9];
   break;
 
