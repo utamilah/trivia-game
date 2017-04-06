@@ -255,5 +255,6 @@ var setCurrentQuestion = function(){
       currentAns = question10.choices;
       break;
     default:
+    console.log('switch/case not working')
   }
 }
