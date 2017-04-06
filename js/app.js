@@ -14,9 +14,9 @@ var question4 = new Question("Which artist did NOT contribute to Beyonce's Lemon
 var question5 = new Question("Finish the Lyric: Lucy in the sky with _____.",['Dioramas','Diamonds','Clouds'], 'Diamonds');
 var question6 = new Question("Which musician is NOT a part of the 27 Club?",['Jeff Buckley','Brian Jones','Janis Joplin'], 'Jeff Buckley');
 var question7 = new Question("Which guitar innovator and player has a range of Gibson Guitars named after him?",['Meatloaf','Slash','Les Paul'], 'Les Paul');
-var question8 = new Question('Question8',['A8','B8','C8'], 'C8');
-var question9 = new Question('Question9',['A9','B9','C9'], 'B9');
-var question10 = new Question('Question10',['A10','B10','C10'], 'A10');
+var question8 = new Question("What did the White Stripes call their last album?",['White Elephant','Icky Thump','The White Stripes'], 'Icky Thump');
+var question9 = new Question("What is the significance of the number '3' on Chance the Rapper's merchandise?",['His third mixtape','His third album','His 3-year-old daughter'], 'His third mixtape');
+var question10 = new Question("Finish the Lyric: I'm sorry ________ (oh), I am for real...",['Mr. President','Miss Jackson','Momma'], 'Miss Jackson');
 
 var musicQues = [
   question1.question,
@@ -94,7 +94,7 @@ var nextQuestion = function(){
 
   // remove current index and log array into console to see if it worked
   musicQues.splice(musicQues.indexOf(current),1)
-  console.log(musicQues);
+  console.log(current);
 
   // Toggle display of next button if answer is clicked
   nextBtn.toggle();
@@ -110,7 +110,6 @@ var nextQuestion = function(){
       window.location.reload()
     })
     clearInterval(timerId);
-    console.log('stop timer hopefully')
   }
 }
 
