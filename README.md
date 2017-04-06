@@ -1,4 +1,4 @@
-#Trivia Game
+##Trivia Game
 *Explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.*
 **Installation**
 Simply fork this repo and clone it to your computer.
