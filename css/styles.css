@@ -44,12 +44,12 @@ main {
   margin: 50px auto;
   text-align: center;
 }
-#nextBtn {
+#nextBtn, #playAgain {
   display: none;
   margin: 20px auto;
   text-align: center;
 }
-  #intro button, #quizBox button {
+  #intro #playBtn, #quizBox .answerBtn {
     display: block;
     margin: 30px auto;
     padding: 25px;
@@ -68,7 +68,7 @@ main {
       font-size: 1.25em;
     }
 
-#nextBtn button {
+#nextBtn button, #playAgain button {
   background: rgba(	255, 109, 109, .4);
   border-radius: 10px;
   border: none;
@@ -77,12 +77,12 @@ main {
   text-decoration: none;
   font-size: 24px;
 }
-  #nextBtn button:hover {
+  #nextBtn button:hover, #playAgain button:hover {
     background: rgba(	255, 109, 109, 1);
     -webkit-transition: background-color 2s ease-out;
     -moz-transition: background-color 2s ease-out;
     -o-transition: background-color 2s ease-out;
-    transition: background-color 2s ease;
+    transition: background-color 2s ease-out;
   }
   .default {
     background: #fff;
@@ -96,7 +96,7 @@ main {
     background: #F44040;
     color: #fff;
   }
-  #intro button:active, #quizBox button:active {
+  #intro #playBtn:active, #quizBox .default:active {
     transform: translate(0px, 5px);
     -webkit-transform: translate(0px, 5px);
     box-shadow: 0 0 0 0;
