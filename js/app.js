@@ -1,24 +1,28 @@
-class Questions {
-  constructor(question,choice,answer){
-    this.question = question,
-    this.choice = choice,
-    this.answer = answer
-  }
-}
-
 // Create objects that hold questions
+  // var musicQues = {
+  //   ques1: 'Question 1',
+  //   ques2: 'Question 2',
+  //   ques3: 'Question 3',
+  //   ques4: 'Question 4',
+  //   ques5: 'Question 5',
+  //   ques6: 'Question 6',
+  //   ques7: 'Question 7',
+  //   ques8: 'Question 8',
+  //   ques9: 'Question 9',
+  //   ques10: 'Question 10'
+  // };
   var musicQues = [
-    ['Question 1'],
-    ['Question 2'],
-    ['Question 3'],
-    ['Question 4'],
-    ['Question 5'],
-    ['Question 6'],
-    ['Question 7'],
-    ['Question 8'],
-    ['Question 9'],
-    ['Question 10']
-  ];
+    'Question 1',
+    'Question 2',
+    'Question 3',
+    'Question 4',
+    'Question 5',
+    'Question 6',
+    'Question 7',
+    'Question 8',
+    'Question 9',
+    'Question 10'
+  ]
 // Create multiple choice object
   var answers = [
      ['A1','B1','C1'],
@@ -32,10 +36,12 @@ class Questions {
      ['A9','B9','C9'],
      ['A10','B10','C10']
    ];
+// Answered Questions
+  var answeredQuestions = [];
 
 // Randomize question order
-// var allQuestions = musicQues[0];
-var allQuestions = musicQues[Math.floor(Math.random() * musicQues.length)];
+// var randomQ = musicQues[0];
+var randomQ = musicQues[Math.floor(Math.random() * musicQues.length)];
 
 var answerBtn = $('.answerBtn');
 var questionNum = $('.questionNum');
@@ -54,7 +60,7 @@ $('#playBtn').on('click', function(){
 
   $('#quizBox').fadeIn(500,'swing',function(){
     // Add question and answer text to the page
-    $('.question').text(allQuestions);
+    $('.question').text(randomQ);
   });
 });
 
@@ -73,32 +79,42 @@ var guess = function(){
     }
   }
   // Toggle display of next button if answer is clicked
-  nextBtn.toggle();
+  nextBtn.attr('style','display: block');
 }
 // Activate function when any answer is clicked
 answerBtn.on('click', guess);
 
-// Create a function and click event that will move on to next question
+// Create a function that will move on to next question
 var nextQuestion = function(){
-  allQuestions = musicQues[Math.floor(Math.random() * musicQues.length)]
+  // Reshuffle questions displayed
+  randomQ = musicQues[Math.floor(Math.random() * musicQues.length)]
+  // Reactivate switch case
   setCurrentQuestion()
-  console.log(allQuestions);
-  answerBtn.removeClass('correct incorrect');
-    $('.question').text(allQuestions);
+  console.log(randomQ)
+  // Remove green/red backgrounds from buttons
+  answerBtn.removeClass('correct incorrect')
+
+  $('.question').text(randomQ)
+
+  answeredQuestions.push(current);
+  console.log(musicQues);
+  console.log(answeredQuestions);
+  // musicQues.splice(musicQues.indexOf(current),1)
 
   // Toggle display of next button if answer is clicked
   nextBtn.toggle();
   // If Question Array is empty
-  if(musicQues.length === 0){
+  if(answeredQuestions.length === 10){
     $('#quizBox').toggle();
+    $('#scoreBox').attr('style','display: block');
   }
 }
-
+// Next question click event
 nextBtn.on('click', nextQuestion);
 
 function setCurrentQuestion() {
   // Switch Case that pairs all questions to answers
-  switch (allQuestions) {
+  switch (randomQ) {
     case musicQues[0]:
     musicQues.forEach(function(question, i) {
       // questionNum.eq(i).text(`Question ${i + 1}`);
@@ -200,7 +216,7 @@ function setCurrentQuestion() {
     break;
 
     default:
-    console.log('High Scores Here')
+    console.log('not quite')
 }
 
 }
