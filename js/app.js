@@ -13,7 +13,7 @@ var question3 = new Question("Who is the youngest member of One Direction?",['Ni
 var question4 = new Question("Which artist did NOT contribute to Beyonce's Lemonade?",['Ezra Koenig','Diplo','Drake'], 'Drake');
 var question5 = new Question("Finish the Lyric: Lucy in the sky with _____.",['Dioramas','Diamonds','Clouds'], 'Diamonds');
 var question6 = new Question("Which musician is NOT a part of the 27 Club?",['Jeff Buckley','Brian Jones','Janis Joplin'], 'Jeff Buckley');
-var question7 = new Question('Question7',['A7','B7','C7'], 'C7');
+var question7 = new Question("Which guitar innovator and player has a range of Gibson Guitars named after him?",['Meatloaf','Slash','Les Paul'], 'Les Paul');
 var question8 = new Question('Question8',['A8','B8','C8'], 'C8');
 var question9 = new Question('Question9',['A9','B9','C9'], 'B9');
 var question10 = new Question('Question10',['A10','B10','C10'], 'A10');
@@ -35,6 +35,7 @@ var correctAns = []
 
 // Start Game after play button is clicked
 $('#playBtn').on('click',function(){
+  startTimer()
   setCurrentQuestion()
   $('#intro').toggle()
   $('#topInfo').attr('style','display: flex')
@@ -46,11 +47,11 @@ $('#playBtn').on('click',function(){
 
 // Randomize Questions
 var randomQ = musicQues[Math.floor(Math.random() * musicQues.length)];
-// var randomQ = musicQues[0];
 
 var answerBtn = $('.answerBtn')
 var questionNum = $('.questionNum')
 var nextBtn = $('#nextBtn')
+var seconds = 19;
 
 var correct = null
 var current = null
@@ -84,6 +85,7 @@ var nextQuestion = function(){
   randomQ = musicQues[Math.floor(Math.random() * musicQues.length)]
   // Reactivate switch case
   setCurrentQuestion()
+  seconds = 20;
   console.log(randomQ)
   // Remove green/red backgrounds from buttons
   answerBtn.removeClass('correct incorrect')
@@ -104,8 +106,29 @@ var nextQuestion = function(){
   if(musicQues.length === 0){
     $('#quizBox').toggle();
     $('#scoreBox').attr('style','display: flex').text(correctAns.length);
+    $('#playAgain').attr('style','display: block').on('click',function(){
+      window.location.reload()
+    })
+    clearInterval(timerId);
+    console.log('stop timer hopefully')
   }
 }
+
+// Timer
+var timerId
+
+var startTimer = function() {
+  timerId = setInterval(updateTime, 1000);
+}
+
+var updateTime = function() {
+  $('.timer p').text(seconds)
+  seconds--
+  if(seconds === 0){
+    nextQuestion();
+  }
+}
+
 // Next question click event
 nextBtn.on('click', nextQuestion);
 
