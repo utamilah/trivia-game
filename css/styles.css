@@ -9,7 +9,13 @@ main {
   width: 70%;
   margin: auto;
 }
-
+#scoreBox {
+  display: none;
+}
+  #scoreBox {
+    text-align: center;
+    font-size: 3em;
+  }
 #topInfo {
   margin: 0 auto;
   text-align: center;
