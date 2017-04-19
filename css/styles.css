@@ -4,6 +4,7 @@ body {
     color: #fff;
     font-family: 'Montserrat', sans-serif;
 }
+/*Cool background styling and use of gradients ++ */
 
 main {
     width: 70%;
@@ -23,6 +24,7 @@ main {
     border-radius: 25px;
 }
 
+/*Couldn't you simply combine this selector with the one above?*/
 #scoreBox {
     text-align: center;
     font-size: 3em;
@@ -94,6 +96,7 @@ main {
     -o-transition: background-color 2s ease-out;
     transition: background-color 2s ease-out;
 }
+/*Good use of browser prefixes to ensure cross-browser compatibility ++ */
 
 .default {
     background: #fff;
