@@ -66,7 +66,8 @@ main {
     font-size: 1.5em;
     font-weight: 300;
     text-decoration: none;
-    box-shadow: 0 5px 0 0 #8E2D37;
+    box-shadow: 0 5px #8E2D37;
+    position: relative;
 }
 
 #intro h1 {
@@ -110,10 +111,16 @@ main {
     color: #fff;
 }
 
-#intro #playBtn:active, #quizBox .default:active {
+#intro #playBtn:hover, #quizBox .answerBtn:hover {
+  top: -4px;
+  box-shadow: 0 9px #8E2D37;
+}
+
+#intro #playBtn:active, #quizBox .answerBtn:active {
     transform: translate(0px, 5px);
     -webkit-transform: translate(0px, 5px);
-    box-shadow: 0 0 0 0;
+    top: 0px;
+    box-shadow: 0 0;
 }
 
 .active {
