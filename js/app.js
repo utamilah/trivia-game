@@ -5,6 +5,8 @@ class Question {
         this.answer = answer;
     }
 }
+// Great use of OOJS to package question data together. Maybe think above what methods
+// (functionality) you could give questions to further modularize your code.
 
 // All Questions
 var question1 = new Question("What year did Discovery by Daft Punk drop?", ['2001', '2008', '1999'], '2001');
@@ -18,6 +20,9 @@ var question8 = new Question("What did the White Stripes call their last album?"
 var question9 = new Question("What is the significance of the number '3' on Chance the Rapper's merchandise?", ['His third mixtape', 'His third album', 'His 3-year-old daughter'], 'His third mixtape');
 var question10 = new Question("Finish the Lyric: I'm sorry ________ (oh), I am for real...", ['Mr. President', 'Ms. Jackson', 'Momma'], 'Miss Jackson');
 
+// Think above how making 'musicQues' an array of Question objects (instead of just
+// their questions text properties), could help you streamline your code in the
+// setCurrentQuestion function.
 var musicQues = [
     question1.question,
     question2.question,
@@ -83,6 +88,9 @@ answerBtn.on('click', guess);
 var nextQuestion = function() {
     // Reshuffle questions displayed
     randomQ = musicQues[Math.floor(Math.random() * musicQues.length)]
+    // Maybe instead of just selecting a random question, you have it select a random
+    // question and then remove that question from the 'musicQues' array. That way,
+    // you won't have the possibility of seeing the same question twice in a round.
     // Reactivate switch case
     setCurrentQuestion()
     seconds = 20;
@@ -128,6 +136,10 @@ var updateTime = function() {
     }
 }
 
+// Generally, you want all variables declared at the top of the script, functions in the midde,
+// and event listeners at the bottom. Also, I would recommend using function declarations instead
+// of function expressions (more common, automatically hoisted).
+
 // Next question click event
 nextBtn.on('click', nextQuestion);
 
@@ -136,6 +148,9 @@ var setCurrentQuestion = function() {
     switch (randomQ) {
         // Question 1
         case question1.question:
+            // I don't think you need to iterate through all of the questions in 
+            // `musicQues`. You only need to iterate through the choices for the
+            // current question. (in this case, 'question1.choices.forEach((choice) =>)...')
             musicQues.forEach(function(question, i) {
                 answerBtn.eq(i).text(question1.choices[i]);
             })
@@ -144,6 +159,11 @@ var setCurrentQuestion = function() {
             current = question1;
             currentAns = question1.choices;
             break;
+            // If you set `randomQ` to a given Question object, instead of just its
+            // question text property (suggested above), you wouldn't need to use
+            // a switch statement here to match it back together with its answer and
+            // choices properties:
+
 
             // Question 2
         case question2.question:

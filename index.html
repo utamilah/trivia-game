@@ -10,6 +10,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Nice use of CSS libraries for fonts / normalize ++ -->
     <title>Music Trivia - Hali Bakarr</title>
 </head>
 
@@ -17,6 +18,8 @@
     <main>
       <!-- Timer and Score -->
         <header id="topInfo">
+            <!-- Maybe use a id 'game-info' or 'scoreboard' for this header, also
+            classes/ids typcially should be spine-cased, not camelcased.  -->
             <div class="timer">
                 <h6>Timer</h6>
                 <p>20</p>
@@ -31,6 +34,8 @@
             <h1>Musical Trivia</h1>
             <p>Test your musical knowledge!</p>
             <a href="#" id="playBtn" class="default">Let's Play</a>
+            <!-- If 'playBtn' doesn't go to a new page and only activates something on
+            the current page, it's usually better to use a button instead of anchor tag -->
         </section>
 
         <!-- Quiz Section -->
@@ -38,6 +43,7 @@
             <p class="questionNum"></p>
             <h1 class="question"></h1>
             <a href="#" class="answerBtn default"></a>
+            <!-- The same applies here as well -->
             <a href="#" class="answerBtn default"></a>
             <a href="#" class="answerBtn default"></a>
         </section>
