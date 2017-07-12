@@ -94,7 +94,6 @@ var nextQuestion = function() {
 
     // remove current index and log array into console to see if it worked
     musicQues.splice(musicQues.indexOf(current), 1)
-    console.log(current);
 
     // Toggle display of next button if answer is clicked
     nextBtn.toggle();
