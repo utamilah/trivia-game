@@ -93,7 +93,7 @@ var nextQuestion = function() {
     $('.question').text(randomQ)
 
     // remove current index and log array into console to see if it worked
-    musicQues.splice(musicQues.indexOf(current), 1)
+    musicQues.splice(musicQues.indexOf(randomQ), 1)
 
     // Toggle display of next button if answer is clicked
     nextBtn.toggle();
